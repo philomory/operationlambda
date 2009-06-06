@@ -14,7 +14,7 @@ $LOAD_PATH.push(OperationLambda::Platform::LibSrcDir)
 $LOAD_PATH.push(OperationLambda::Platform::AppSrcDir)
 
 require 'MainWindow'
-
+OperationLambda::Platform.setup_userdir
 OperationLambda::Settings.load_settings
 $window = OperationLambda::MainWindow.instance
 $window.show

@@ -5,9 +5,6 @@ module OperationLambda
     LibSrcDir = File.join(TopDir,'lib')
     ApplicationDir = File.join(TopDir,'appdata')
     UserDir = File.join(ENV['HOME'],'Library','Application Support','Operation Lambda')
-    Dir.mkdir(UserDir) unless File.exist?(UserDir)
-    dir = File.join(UserDir,'Levelsets')
-    Dir.mkdir(dir) unless File.exists?(dir)
   end
 end
 
@@ -15,6 +12,7 @@ $LOAD_PATH.replace([OperationLambda::Platform::AppSrcDir,OperationLambda::Platfo
 
 require 'MainWindow'
 
+OperationLambda::Platform.setup_userdir
 OperationLambda::Settings.load_settings
 $window = OperationLambda::MainWindow.instance
 $window.show
