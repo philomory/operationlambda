@@ -1,14 +1,14 @@
-= Operation Lambda README (Version 0.9)							        2009-06-04
+= Operation Lambda README (Version 0.9)                                 2009-06-04
 
 == What is Operation Lambda?
 
 Operation Lambda is a remake of the original Operation Lambda, a fantastic
 action/puzzle game for the Apple IIGS by Bret Victor. To quote the author,
 
-	"My biggest IIgs production. A logic/action game, where you work your 
-	way through a space station under distress, deflecting laser beams and 
-	saving hostages. 100 levels of fun and excitement."
-	
+    "My biggest IIgs production. A logic/action game, where you work your 
+    way through a space station under distress, deflecting laser beams and 
+    saving hostages. 100 levels of fun and excitement."
+    
 The original Operation Lambda, released in 1996, was written entirely in 65816
 assembly and never available for anything other than the IIGS. This version is
 a remake written entirely in Ruby, and should run on more or less any modern 
@@ -30,8 +30,8 @@ you should not need any extra software. You can skip to the next section.
 If you have downloaded the Operation Lambda source, you will need
 to have these programs to be able to play the game:
 
-* ruby		>= 1.8.6, including 1.9.x
-* gosu		>= 0.7.11*
+* ruby      >= 1.8.6, including 1.9.x
+* gosu      >= 0.7.11*
 * texplay   >= 0.1.0
 
 Older versions might work, but they have not been tested.
