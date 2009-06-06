@@ -14,8 +14,13 @@ available online at: http://www.ruby-lang.org/en/LICENSE.txt
 
 Operation Lambda makes use of the 'Gosu' game development library for Ruby. If
 you have received the pre-packed application form of Operation Lambda, then a
-then a copy of Gosu has been included. Gosu is covered under the terms of the
-MIT license, available online at:
+copy of Gosu has been included. Gosu is covered under the terms of the MIT
+license, available online at: http://www.opensource.org/licenses/mit-license.php .
+
+Operation Lambda makes use of the 'TexPlay' image manipulation library for
+Ruby & Gosu. If you have received the pre-packed application form of Operation
+Lambda, then a copy of TexPlay has been included. TexPlay is covered under the
+terms of the MIT license, available online at:
 http://www.opensource.org/licenses/mit-license.php .
 
 The pre-packaged application version of Operation Lambda is distributed with a 
