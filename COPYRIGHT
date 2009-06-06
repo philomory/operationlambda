@@ -1,0 +1,30 @@
+Operation Lambda and all of the levels, graphics and sounds taken from it are
+(c) Copyright 1996 Bret Victor, and are used with permission. All other code
+and content is (c) Copyright 2009 Adam Gardner.
+
+Operation Lambda is provided to you under the terms of the Artistic License 2.0,
+found in the LICENSE file that should accompany this software. If you did not
+receive a copy of the LICENSE file, then you can view the text of the license
+online at http://www.perlfoundation.org/artistic_license_2_0 .
+
+Operation Lambda makes use of the 'Ruby' programming language. If you have
+received the pre-packaged application form of Operation Lambda, then a copy of
+Ruby has been included. Ruby is covered under the terms of the Ruby License,
+available online at: http://www.ruby-lang.org/en/LICENSE.txt
+
+Operation Lambda makes use of the 'Gosu' game development library for Ruby. If
+you have received the pre-packed application form of Operation Lambda, then a
+then a copy of Gosu has been included. Gosu is covered under the terms of the
+MIT license, available online at:
+http://www.opensource.org/licenses/mit-license.php .
+
+The pre-packaged application version of Operation Lambda is distributed with a 
+slightly customized copy of Gosu. Gosu can use any of a number of third-party
+audio libraries to provide audio functionality to a game, including SDL, OpenAL,
+or FMOD. The copy of Gosu distributed with Operation Lambda uses the SDL (Simple 
+DirectMedia Layer) library to provide audio functionality. SDL is distributed
+under the terms of the GNU Lesser General Public License, available online at:
+http://www.libsdl.org/license-lgpl.php . Operation Lambda has no relationship with
+OpenAL or with FMOD. In particular, the author of Operation Lambda makes no licensing
+claims regarding OpenAL or FMOD. If you use Operation Lambda with an audio library other
+than SDL, you must agree to that library's license agreement yourself.

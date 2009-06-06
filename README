@@ -1,0 +1,108 @@
+= Operation Lambda README (Version 0.9)							        2009-06-04
+
+== What is Operation Lambda?
+
+Operation Lambda is a remake of the original Operation Lambda, a fantastic
+action/puzzle game for the Apple IIGS by Bret Victor. To quote the author,
+
+	"My biggest IIgs production. A logic/action game, where you work your 
+	way through a space station under distress, deflecting laser beams and 
+	saving hostages. 100 levels of fun and excitement."
+	
+The original Operation Lambda, released in 1996, was written entirely in 65816
+assembly and never available for anything other than the IIGS. This version is
+a remake written entirely in Ruby, and should run on more or less any modern 
+computer (though not, alas, on a IIGS).
+
+=== Relevant Links
+1. Operation Lambda: http://...?
+2. Original Operation Lambda: http://worrydream.com/iigs/#operationlambda
+3. Bret Victor: http://worrydream.com/
+4. Ruby: http://ruby-lang.org/
+5. LibGosu: http://libgosu.org/
+6. SDL: http://libsdl.org/
+
+== Requirements
+
+If you are using a pre-packaged copy of Operation Lambda for Windows or OS X,
+you should not need any extra software. You can skip to the next section.
+
+If you have downloaded the Operation Lambda source, you will need
+to have these programs to be able to play the game:
+
+* ruby		>= 1.8.6, including 1.9.x
+* gosu		>= 0.7.11*
+* texplay   >= 0.1.0
+
+Older versions might work, but they have not been tested.
+
+Please note, on Windows and Linux there seem to be problems using TexPlay with
+versions of Gosu newer than 0.7.11. This is expected to be fixed soon. On 
+OS X, versions up to and including 0.7.13.3, work fine.
+
+If you have Mac OS X or Linux, you probably already have ruby installed.
+Windows users can get it from http://www.ruby-lang.org/ .
+
+The simplest way to install Gosu is with RubyGems, with which you would just
+run `gem install gosu`. Alternatively, download it at http://www.lib-gosu.org 
+
+== Install
+
+If you have a pre-packed copy of Operation Lambda, just double-click the
+included Operation Lambda.app (if on OS X) or Operation Lambda.exe (if on 
+Windows.)
+
+If you are running the game from source, just execute 'ruby OperationLambda.rb`
+in the directory containing the source. If you installed Gosu via RubyGems,
+and you have a ruby version earlier than 1.9, you'll likely need to run 
+`ruby -rubygems OperationLambda.rb` instead.
+
+== How to Play
+
+=== Menu Controls
+
+Navigation: Arrow keys or Tab and Shift-Tab
+Selection:  Space-bar/Enter/Return
+Back/Quit:  Escape
+
+=== Gameplay Controls
+
+Gameplay controls can be configured in the 'Settings' menu. The default
+controls are:
+
+Move player:  Arrow keys
+Fire pistol:  Z
+Turn mirror:  X
+Pause menu :  Escape
+
+=== Objective
+
+Travel through each level, resuce the hostages, and get to the exist without
+being shot or blown up. Don't let the hostages get killed either!
+
+Details on what objects do what (with pictures) are available through the in-
+game help, accessed from the 'Info' menu.
+
+== The Level Builder
+
+The Level Builder is fully functional, but not particularly polished at this
+time. If you want to tinker with it, though, feel free. Note that among other
+problems, you cannot set the keys used for previous/next 'tool'. They are
+hard-coded to '[' and ']', respectively. All other keys can be changed from
+the Settings menu.
+
+Note that you cannot edit the built-in levelset. You can, however, create a
+copy of it using the 'Clone Levelset' item in the Level Builder menu, then edit
+the copy.
+
+== License
+
+This package is released under the terms of the Artistic License 2.0. See the
+included file LICENSE for the full text of the license.
+
+== Copyright
+
+Operation Lambda and all of the levels, graphics and sounds taken from it are
+(c) Copyright 1996 Bret Victor, and are used with permission. All other code
+and content is (c) Copyright 2009 Adam Gardner. See the COPYRIGHT file for
+full details.

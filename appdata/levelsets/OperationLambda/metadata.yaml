@@ -1,0 +1,13 @@
+---
+levelset: 'OperationLambda'
+title: 'Operation Lambda'
+authors: 
+    - 'Bret Victor'
+levels: 100
+datatype: 'bigboard'
+
+details: {
+    width:  20,
+    height: 14,
+    file: 'bigboard'
+} 
