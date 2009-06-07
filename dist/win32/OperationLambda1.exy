@@ -2,12 +2,12 @@
 # on 2009-06-06 23:30
 
 general:
-  startup: ../../OperationLambda.rb
+  startup: OL-exerb-main.rb
   core: cui
   kcode: none
 
 file:
-  ../../OperationLambda.rb:
+  OL-exerb-main.rb:
   Platform.rb:
     file: ./../../app/Platform.rb
   stringio.so:

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+begin
 module OperationLambda
   module Platform
     TopDir = File.dirname(__FILE__)
@@ -18,3 +18,8 @@ OperationLambda::Platform.setup_userdir
 OperationLambda::Settings.load_settings
 $window = OperationLambda::MainWindow.instance
 $window.show
+rescue
+puts $!
+puts $!.backtrace
+gets
+end
