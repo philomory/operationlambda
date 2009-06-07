@@ -14,12 +14,13 @@ module OperationLambda
     UserMediaDir = File.join(UserDir,"media") unless defined? UserMediaDir
     UserTilesetDir = File.join(UserMediaDir,"tiles") unless defined? UserTilesetDir
     UserLevelsetsDir = File.join(UserDir,"levelsets") unless defined? UserLevelsetsDir
-  end
   
-  module_function
-  def setup_userdir
-    [UserDir,SettingsDir,UserMediaDir,UserTilesetDir,UserLevelsetsDir].each do |dir|
-      Dir.mkdir(dir) unless File.exist?(dir)
+  
+    module_function
+    def setup_userdir
+      [UserDir,SettingsDir,UserMediaDir,UserTilesetDir,UserLevelsetsDir].each do |dir|
+        Dir.mkdir(dir) unless File.exist?(dir)
+      end
     end
   end
 end
