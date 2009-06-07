@@ -1,6 +1,9 @@
 require 'Thing'
 require 'Shot'
 
+#This is an attempt to consolidate CornerNE,CornerNW,
+#CornerSE and CornerSW into a single class. At the moment
+#it is not being used.
 module OperationLambda
   module Things
     class CornerNE < Thing

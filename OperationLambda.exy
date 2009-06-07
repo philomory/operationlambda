@@ -3,7 +3,7 @@
 
 general:
   startup: OperationLambda.rb
-  core: cui
+  core: gui
   kcode: none
 
 file:
