@@ -85,13 +85,16 @@ being shot or blown up. Don't let the hostages get killed either!
 Details on what objects do what (with pictures) are available through the in-
 game help, accessed from the 'Info' menu.
 
-=== Time
+=== Time and Score
 
 There is a timer in Operation Lambda; the amount of time available to you
 varies between levels; you also have less time available in harder difficulty
 levels. The more time you have left when you finish the level, the greater the
 bonus added to you score. In Relaxed mode, that is all that the timer does. In
 Easy mode and higher, if you run out of time, you lose a life.
+
+Higher difficulty levels give you a score multiplier compared to lower
+difficulty levels.
 
 == The Level Builder
 
