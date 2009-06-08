@@ -1,4 +1,4 @@
-= Operation Lambda README (Version 0.9)                                 2009-06-04
+= Operation Lambda README (Version 1.0 alpha)                       2009-06-08
 
 == What is Operation Lambda?
 
@@ -39,7 +39,8 @@ Older versions might work, but they have not been tested.
 
 Please note, on Windows and Linux there seem to be problems using TexPlay with
 versions of Gosu newer than 0.7.11. This is expected to be fixed soon. On 
-OS X, versions up to and including 0.7.13.3, work fine.
+OS X, versions up to and including 0.7.13.3, work fine. This should be fixed
+in Gosu 0.7.13.4.
 
 If you have Mac OS X or Linux, you probably already have ruby installed.
 Windows users can get it from http://www.ruby-lang.org/ .
@@ -53,10 +54,10 @@ If you have a pre-packed copy of Operation Lambda, just double-click the
 included Operation Lambda.app (if on OS X) or Operation Lambda.exe (if on 
 Windows.)
 
-If you are running the game from source, just execute 'ruby OperationLambda.rb`
-in the directory containing the source. If you installed Gosu via RubyGems,
-and you have a ruby version earlier than 1.9, you'll likely need to run 
-`ruby -rubygems OperationLambda.rb` instead.
+If you are running the game from source, just run 'ruby OperationLambda.rb` in 
+the directory containing the source. If you installed Gosu via RubyGems, and
+you have a ruby version earlier than 1.9, you'll likely need to run  `ruby 
+-rubygems OperationLambda.rb` instead.
 
 == How to Play
 
@@ -78,11 +79,19 @@ Pause menu :  Escape
 
 === Objective
 
-Travel through each level, resuce the hostages, and get to the exist without
+Travel through each level, rescue the hostages, and get to the exist without
 being shot or blown up. Don't let the hostages get killed either!
 
 Details on what objects do what (with pictures) are available through the in-
 game help, accessed from the 'Info' menu.
+
+=== Time
+
+There is a timer in Operation Lambda; the amount of time available to you
+varies between levels; you also have less time available in harder difficulty
+levels. The more time you have left when you finish the level, the greater the
+bonus added to you score. In Relaxed mode, that is all that the timer does. In
+Easy mode and higher, if you run out of time, you lose a life.
 
 == The Level Builder
 
@@ -93,8 +102,8 @@ hard-coded to '[' and ']', respectively. All other keys can be changed from
 the Settings menu.
 
 Note that you cannot edit the built-in levelset. You can, however, create a
-copy of it using the 'Clone Levelset' item in the Level Builder menu, then edit
-the copy.
+copy of it using the 'Clone Levelset' item in the Level Builder menu, then
+edit the copy.
 
 == License
 
