@@ -15,7 +15,7 @@ a remake written entirely in Ruby, and should run on more or less any modern
 computer (though not, alas, on a IIgs).
 
 === Relevant Links
-1. Operation Lambda: http://...?
+1. Operation Lambda: http://bitbucket.org/philomory/operationlambda/
 2. Original Operation Lambda: http://worrydream.com/iigs/#operationlambda
 3. Bret Victor: http://worrydream.com/
 4. Ruby: http://ruby-lang.org/
