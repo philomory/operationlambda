@@ -152,6 +152,14 @@ module OperationLambda
       
     end #class NumberSettingMenuItem
     
+    # Dumb hack since only OS X seems to do char substitution.
+    # At least, Windows doesn't. Not sure about Linux.
+    ON, OFF = if RUBY_PLATFORM =~ /darwin/
+                ["\342\234\223", "\342\234\227"] # Checkmark, X-mark
+              else
+                ["On","Off"]
+              end
+    
     class ToggleSettingMenuItem < BaseMenuItem
       def initialize(str,key)
         # @title = lambda{Settings[key] ? "#{str}: \342\230\221" : "#{str}: \342\230\222"}
