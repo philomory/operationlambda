@@ -217,6 +217,7 @@ module OperationLambda
       if @game_state == :died then
         t = (Time.now - @died_time) / @splash_duration
         a = (Math.sin(2*Math::PI*t).abs*256).to_i
+        a = [0, [a,255].min].max
         r,g,b = RGB[@death_color]
         c = Gosu::Color.new(a,r,g,b)
         self.fill(c)
@@ -224,6 +225,7 @@ module OperationLambda
       if @game_state == :time_up then
         t = (Time.now - @died_time) / @splash_duration
         a = (MATH.sin(2*Math::PI*t).abs*256).to_i
+        a = [0, [a,255].min].max
         c = Gosu::Color.new(a,255,255,255)
         self.fill(c)
       end
