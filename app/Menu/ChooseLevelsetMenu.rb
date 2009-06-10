@@ -58,7 +58,7 @@ module OperationLambda
           if @selection_index < self.first_visible_levelset_index
             @first_visible_levelset_index -= 1
           elsif @selection_index == @levelsets[@category].size - 1
-            @first_visible_levelset_index = @levelsets[@category].size - 2
+            @first_visible_levelset_index = [@levelsets[@category].size - 2,0].max
           end
         when *[Gosu::KbRight,Gosu::KbLeft]
           @category = (@category == :app ? :user : :app)
