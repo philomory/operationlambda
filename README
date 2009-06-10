@@ -1,4 +1,4 @@
-= Operation Lambda README (Version 1.0 alpha)                       2009-06-08
+= Operation Lambda README (Version 1.0 alpha 2)                    2009-06-09
 
 == What is Operation Lambda?
 
@@ -107,6 +107,16 @@ the Settings menu.
 Note that you cannot edit the built-in levelset. You can, however, create a
 copy of it using the 'Clone Levelset' item in the Level Builder menu, then
 edit the copy.
+
+== History
+
+1.0 alpha 2 - 2009-06-09
+  * Fixed (I hope) occasional crash bug when player dies. Issue #1
+  * Fixed graphical glitch when selecting levelset. Issue #2
+
+1.0 alpha - 2009-06-08
+  * Initial public release
+  * Happy birthday!
 
 == License
 
