@@ -1,3 +1,7 @@
+# This file contains various odds and ends, most of which are not really
+# specific to this project, such as creating consistency between ruby 1.8 and 
+# 1.9
+
 #A helper function, makes code more readable
 class Object
   def in?(object)
@@ -52,6 +56,9 @@ module OperationLambda
 end
 
 
+# Really not sure what this is doing in helper. Shouldn't it be in Constants?
+# TODO: figure out if there's any reason not to move this to Constants.rb, and
+# if not, then move it.
 module OperationLambda
   RGB = {
     :red    => [255,0,0],
@@ -60,27 +67,3 @@ module OperationLambda
     :none   => [255,255,255]
   }
 end
-
-#simple helper for directions
-#class << :north; def opposite; :south; end; end
-#class << :south; def opposite; :north; end; end
-#class << :east; def opposite; :west; end; end
-#class << :west; def opposite; :east; end; end
-
-# Adding 'define_singleton_method' to keep Ruby 1.8.x compatibility
-# Not currently using this, but I'm keeping it around in case I decide I 
-# want it again.
-=begin
-if RUBY_VERSION < "1.9"
-  class Object
-    def define_singleton_method(*args,&b)
-      metaclass = (class << self; self; end)
-      if block_given?
-        metaclass.class_eval{define_method(*args,&b)}
-      else
-        metaclass.class_eval{define_method(*args)}
-      end
-    end
-  end
-end
-=end

@@ -1,6 +1,15 @@
 require 'Constants'
 
 module OperationLambda
+  
+  # A module which is included into Thing to allow laserbeams to be drawn. It
+  # also provides a utility function for calculating the color that results
+  # from two overlapping beams.
+  #
+  # This is a pretty terrible module, and if I were doing this from scratch
+  # I'd definitely want to do it differently. As it is, I'll probably leave it
+  # alone until/unless I decide I need to add laser paths into the level
+  # previews.
   module Beam 
     def draw_beams(x,y)
       @laserbeams.each do |direction,color|

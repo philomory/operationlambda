@@ -5,6 +5,8 @@ require 'TextField'
 
 module OperationLambda
   module HighScore
+    
+    # This screen allows the player to enter their name if they get a high score.
     class EntryScreen < Screen
       
       NameXOffset   = 150

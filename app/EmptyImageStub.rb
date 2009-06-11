@@ -1,5 +1,12 @@
 module OperationLambda
   module ImageManager
+    
+    # EmptyImageStub is based on an idea Julian Raschke suggested in #gosu
+    # on IRC. It provides empty RMagic::Image-like objects which, when
+    # passed to Gosu::Image's constructor, have their to_blob method called,
+    # to provide RGBA data. This allows the easy creation of new Gosu::Image
+    # objects without accessing the filesystem, which can then be drawn into
+    # with TexPlay.
     class EmptyImageStub
       def initialize(w,h)
         @w, @h = w, h;

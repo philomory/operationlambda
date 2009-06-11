@@ -5,6 +5,13 @@ require 'Menu/ConfirmMenu'
 
 module OperationLambda
   module HighScore
+    
+    # This Screen displays high scores. There are three categories to select
+    # from horizontally: the top scores collected across every levelset,
+    # the top scores for individual levelsets that are included with Operation
+    # Lambda, and the top scores for third-party, user-installed levelsets.
+    # In the second and third columns, the up and down keys can be used to
+    # select which individual levelset to look at.
     class DisplayScreen < Screen
       
       NameXOffset   = 150

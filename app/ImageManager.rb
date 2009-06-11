@@ -6,6 +6,13 @@ require 'Tileset'
 require 'EmptyImageStub'
 
 module OperationLambda
+  
+  # This module is responsible for loading, and supplying to other classes,
+  # all the images (and for some reason, fonts) used by the game. ImageManager
+  # and it's helper classes Tileset and Tile are the only classes that ever
+  # call Gosu::Image.new, or have anything to do with images files on disk.
+  #
+  # TODO: add more comments to this file.
   module ImageManager
     ImagesDir = File.join(Platform::ApplicationMediaDir,'images')
     StandardDir = File.join(ImagesDir,'standard')

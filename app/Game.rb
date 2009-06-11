@@ -19,8 +19,11 @@ require 'HighScore/Manager'
 require 'HighScore/EntryScreen'
 
 module OperationLambda
+  
+  # The Game class impliments the core gameplay logic of Operation Lambda.
+  # It is currently in need of a cleanup.
   class Game < Screen
-    attr_accessor :map, :shot, :player, :score, :timer, :game_state
+    attr_accessor :map, :shot, :player, :score, :timer
 
     def initialize(levelset,level,difficulty)
       super()
@@ -35,11 +38,23 @@ module OperationLambda
       self.first_start_level
     end #def initialize
 
+    # TODO: remove Game#setup_hud; it's stupid. Move ypos calc into HUD class.
     def setup_hud
       ypos = Sizes::WindowHeight - Sizes::HUDHeight + Sizes::TopMargin + Sizes::BottomMargin
       @hud = HUD.new(self,ypos)
     end
 
+    # The way Game#active_key works is, @key_stack is a stack of the keys
+    # currently depressed, with the most recently depressed key on top.
+    # active_key gets the topmost item on the stack for which there is an
+    # associated key-mapping.
+    #
+    # The pupose of this is to allow the following, which mirrors the behavior
+    # of the original Operation Lambda:
+    # You begin not pressing any keys. If you press and hold left, you will
+    # begin to move left. If you then press and begin to hold up, while still
+    # holding down left as well, you will stop moving left and instead move up.
+    # However, when you let go of the left key, you will begin moving up again.
     def active_key
       @key_stack.find {|key| Settings[:key_config][:gameplay].key?(key)}
     end #def active_key
@@ -113,6 +128,9 @@ module OperationLambda
       @timer.time_remaining.to_i
     end
     
+    # Something tells me that all of this logic should move into the Player
+    # class, and that Player#update should recieve the active key as a
+    # parameter.
     def update_player
       @player.update
       unless @player.moving

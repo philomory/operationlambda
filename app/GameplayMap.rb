@@ -4,11 +4,14 @@ require 'helper'
 require 'BaseMap'
 
 module OperationLambda
+  # This class represents a map on which the game will be played. It has
+  # a *ton* of attr_accessors; some of them should probably be made read-only,
+  # or disappear altogether if possible.
   class GameplayMap < BaseMap
-    attr_accessor :player_start, :lasers, :laser_state, :hostages,:game, :time, :switch_state, :gates, :crumbling
+    attr_accessor :player_start, :lasers, :laser_state, :hostages,:game, :time
+    attr_accessor :switch_state, :gates, :crumbling
 
     def initialize(game,width,height,level_hash)
-      
       super(width,height)
       @game = game
       @player_start = {:x => 0, :y => 0,:dir => :east}
@@ -29,7 +32,9 @@ module OperationLambda
       end
     end #def initialize
   
-  
+    
+    # Surely only one of these two methods is necessary?
+    # TODO: Investigate canPushThing_inDirection vs canPushThingAtX_andY_inDirection
     def canPushThing_inDirection(thing,direction)
       if thing.movable? then
         destination = thing.send(direction)
@@ -45,6 +50,9 @@ module OperationLambda
       return canPushThing_inDirection(self[x,y],direction)
     end #def canPushThingAtX_andY_inDirection
   
+    # I think the only differnce between this and just calling 'super'
+    # is the call to draw_beams. This is stupid.
+    # TODO: Refactor this.
     def draw
       @background_image.draw(0,0,ZOrder::Stars)
       self.each_with_coords do |obj,x,y|
@@ -60,6 +68,12 @@ module OperationLambda
       self.each {|thing| thing.remove_lasers}
     end
     
+    # This hash maps 'keys' (poor word choice, in this context it means Strings
+    # which uniquely identify various kinds of objects; identifying class, as
+    # well as the initial values for various instance variables) to lambdas
+    # create an instance of the appropriate class with the appropriate parameters
+    # to the constructor. The result of calling such a lambda is an instance of
+    # a subclass of Thing. Hence, KeyToThingHash.
     KeyToThingHash               = {
       'Space'                        => lambda {|map,x,y| Things::Space.new(map,x,y)}, #Bret calls this 'Empty',
       'Empty'                        => lambda {|map,x,y| Things::Empty.new(map,x,y)}, #Bret calls this 'Floor',

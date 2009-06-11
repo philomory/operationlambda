@@ -2,8 +2,16 @@ require 'Platform'
 
 module OperationLambda
   module HighScore
+    
+    # This module takes care of loading the high scores from disk, updating
+    # the high score tables, saving them back to disk, and providing the relevant
+    # information to the two High Score views for display.
     module Manager
       HighScoreFile = File.join(Platform::UserDir,'highscore.yaml')
+      
+      # These are the scores that initially fill the high score table in the
+      # original Operation Lambda after a fresh install (or after you clear
+      # the high score table)
       DefaultHighScores = [
         {:name => 'Lambda', :level => 1, :score => 600},
         {:name => 'Lambda', :level => 1, :score => 500},

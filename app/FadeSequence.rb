@@ -1,6 +1,8 @@
 require 'Sequence'
 
 module OperationLambda
+  
+  # A Sequence used to fade from one Screen to another.
   class FadeSequence < Sequence
     def initialize(from,to)
       @from, @to = from, to

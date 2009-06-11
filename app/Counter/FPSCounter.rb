@@ -1,3 +1,6 @@
+# This code comes from sample code Julian Raschke posted on the Gosu
+# forums, implimenting a simple framerate counter.
+
 module OperationLambda
   module Counter
     class FPSCounter

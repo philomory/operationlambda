@@ -1,4 +1,7 @@
 module OperationLambda
+  
+  # This class represent the HUD at the bottom of the screen that displays
+  # the player's current level, score, lives, time, and hostages rescued.
   class HUD
     HostageOverlayXOffset = 426
     HostageOverlayYOffset = 14
@@ -8,6 +11,8 @@ module OperationLambda
     Col2XOffset = 300
     Row1YOffset = 7
     Row2YOffset = 35
+    # TODO: make HUDYPos a constant instead of an instance variable. See
+    # Game.rb for the calculation.
     
     def initialize (game,ypos)
       @game,@ypos = game,ypos

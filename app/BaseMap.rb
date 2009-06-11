@@ -2,6 +2,15 @@ require 'Constants'
 require 'helper'
 
 module OperationLambda
+  
+  # A class implimenting a basic, discrete tile grid, with the origin
+  # (0,0) in the upper left corner. Also impliments drawing of the contents
+  # of the grid, though perhaps these two elements should be factored into
+  # separate classes, with BaseMap either inheriting, or having as a member,
+  # Grid. Alternatively, remove drawing code, rename BaseMap to Grid, and have
+  # BaseMap's subclasses impliment Draw on their own.
+  #
+  # Or leave it as it. It seems to be working ok.
   class BaseMap
     attr_accessor :width, :height, :places
 
