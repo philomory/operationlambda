@@ -41,6 +41,7 @@ class CrackedBrick < Thing
     def update
       if @crumbling and Time.now - @shottime >= Timing::Cycle
         @map[@x,@y] = Empty.new(@map,@x,@y)
+        @map.crumbling.delete(self)
       end
     end
     
