@@ -10,7 +10,7 @@ module OperationLambda
       end #def initialize
       
       def updateState
-        @state = !@map.switch_state[@color]
+        @state = (@map.switch_state[@color] == 0)
         dest = nil
         if @edge == :north
           dest = self.south

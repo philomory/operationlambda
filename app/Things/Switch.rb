@@ -23,8 +23,12 @@ module OperationLambda
             
       def laserGoingDirection_ofColor(direction,color)
         if SwitchAllows[@orientation].include?(direction)
-          SwitchAllows[@orientation].each {|dir| @laserbeams[dir] = color}
-          @map.switch_state[@color] = (color == @color)
+          # FIXME: Bug, does not react appropriately to two lasers of
+          # different colors coming in at once!
+          final_color = beam_composite(color,@laserbeams[direction])
+          @map.switch_state[@color] -= 1 if @laserbeams[direction] == @color
+          @map.switch_state[@color] += 1 if final_color == @color
+          SwitchAllows[@orientation].each {|dir| @laserbeams[dir] = final_color}
           self.send(direction).laserGoingDirection_ofColor(direction,color)
         end
       end #def laserGoingDirection_ofColor

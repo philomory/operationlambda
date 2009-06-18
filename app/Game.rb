@@ -162,7 +162,7 @@ module OperationLambda
     end
 
     def update_lasers
-      @map.switch_state = {:red => false, :blue => false, :purple => false}
+      @map.switch_state = {:red => 0, :blue => 0, :purple => 0}
       @map.lasers.each {|laser| laser.fireLaser}
       if (player_spot = @map[@player.x,@player.y]).lasered?
         color = (player_spot.laserbeams.values - [:none])[0]

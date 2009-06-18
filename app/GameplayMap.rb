@@ -20,7 +20,7 @@ module OperationLambda
       @crumbling = []
       @laser_state = {:red => true, :blue => true, :purple => true} #true is on, false is off.
       @gates = []
-      @switch_state = {:red => false, :blue => false, :purple => false}
+      @switch_state = {:red => 0, :blue => 0, :purple => 0}
       @time = level_hash[:time]
       #self.each_with_coords do |,x,y| # TODO: Abstract away Grid class and use it more widely.
       #  self[x,y] = KeyToThingHash[key].call(self,x,y)
