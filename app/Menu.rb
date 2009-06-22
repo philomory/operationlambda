@@ -162,9 +162,7 @@ module OperationLambda
     
     class ToggleSettingMenuItem < BaseMenuItem
       def initialize(str,key)
-        # @title = lambda{Settings[key] ? "#{str}: \342\230\221" : "#{str}: \342\230\222"}
-        @title = lambda{Settings[key] ? "#{str}: \342\234\223" : "#{str}: \342\234\227"}
-        
+        @title = lambda{Settings[key] ? "#{str}: #{ON}" : "#{str}: #{OFF}"}
         @selected_action = @incr_action = @decr_action = lambda {Settings[key] = !Settings[key]}
       end #def intialize
     end #class ToggleSettingMenuItem
