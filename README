@@ -1,4 +1,4 @@
-= Operation Lambda README (Version 1.0 alpha 2)                    2009-06-09
+= Operation Lambda README (Version 1.0 alpha 3)                    2009-06-21
 
 == What is Operation Lambda?
 
@@ -109,6 +109,10 @@ copy of it using the 'Clone Levelset' item in the Level Builder menu, then
 edit the copy.
 
 == History
+
+1.0 alpha 3 - 2009-06-21
+  * Fixed laser-overlap-in-switch bug. Issue #3
+  * Fixed disappearing mirror bug. Issue #4
 
 1.0 alpha 2 - 2009-06-09
   * Fixed (I hope) occasional crash bug when player dies. Issue #1
