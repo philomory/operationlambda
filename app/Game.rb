@@ -38,12 +38,6 @@ module OperationLambda
       self.first_start_level
     end #def initialize
 
-    # TODO: remove Game#setup_hud; it's stupid. Move ypos calc into HUD class.
-    def setup_hud
-      ypos = Sizes::WindowHeight - Sizes::HUDHeight + Sizes::TopMargin + Sizes::BottomMargin
-      @hud = HUD.new(self,ypos)
-    end
-
     # The way Game#active_key works is, @key_stack is a stack of the keys
     # currently depressed, with the most recently depressed key on top.
     # active_key gets the topmost item on the stack for which there is an
@@ -120,7 +114,7 @@ module OperationLambda
       @shot = []
       @player.level_start(@map,@map.player_start)
       @death_color = :none
-      self.setup_hud
+      @hud = HUD.new(self)
       @died_time = Time.now - @splash_duration
     end
     
@@ -221,7 +215,7 @@ module OperationLambda
       Settings[:level] += 1
       @map = GameplayMap.new(self,Sizes::TilesWide,Sizes::TilesHigh,@levelset.load_level(Settings[:level]))
       @player.level_start(@map,@map.player_start)
-      self.setup_hud
+      @hud = HUD.new(self)
       self.first_start_level
     end
 
